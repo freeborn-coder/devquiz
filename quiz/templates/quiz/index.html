@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Quiz</title>
+
+    <link rel="stylesheet" href="{% static 'quiz/css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.1/css/all.min.css" integrity="sha512-9my9Mb2+0YO+I4PUCSwUYO7sEK21Y0STBAiFEYoWtd2VzLEZZ4QARDrZ30hdM1GlioHJ8o8cWQiy8IAb1hy/Hg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1 class="brand">
+        DEV QUIZ
+    </h1>
+
+    <section class="categories-section">
+        <p>
+            Choose a category to start the Quiz
+        </p>
+
+        <form action="{% url 'quiz.landing' %}" method="POST">
+            {% csrf_token %}
+            <div class="categories">
+                <input type="hidden" name="category" id="selectedCategory" value="">
+                {% for category in categories %}
+                    <div class="category-item">
+                        <i class="fab fa-{{ category.icon }} fa-5x {{ category.icon }}-color"></i>
+                        <p>
+                            {{ category.title }}
+                        </p>
+                        <input type="hidden" value="{{ category.id }}">
+                    </div>
+                {% endfor %}
+            </div>
+            <br>
+            <button onclick="location.href = 'quiz'">Start Quiz</button>    
+        </form>
+    </section>
+</body>
+
+<script>
+    const categories = document.querySelectorAll('.category-item');
+    categories.forEach((category, index) => {
+        category.addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+
+            if (category.classList.contains('border')) {
+                category.classList.remove('border');
+                return;
+            }
+
+            category.classList.add('border');
+            document.querySelector('#selectedCategory').value = category.querySelector('input').value;
+            
+            // hide other borders
+            categories.forEach((item, key) => {
+                if (index != key) item.classList.remove('border');
+            });
+        });
+    });
+</script>
+</html>

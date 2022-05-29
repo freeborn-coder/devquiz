@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+
+    <link rel="stylesheet" href="{% static 'quiz/css/styles.css' %}">
+</head>
+<body>
+    
+    <section id="quiz-card">
+        <p class="question-counter">1/10</p>
+        <p class="question">In the first book a letter from Hogwarts arrives at PrivetDrive,
+             ut the Dursleys don't want Harry to read it. How old was Harry when he started by Hogwarts?
+        </p>
+        
+        <div class="options">
+            <div>
+                <span>A</span> 9 years
+            </div>
+            <div>
+                <span>B</span> 10 years
+            </div>
+            <div>
+                <span>C</span> 11 years
+            </div>
+            <div>
+                <span>D</span> 12 years
+            </div>
+        </div>
+        <button onclick="location = 'result'" type="button">Next Question >></button>
+    </section>
+
+</body>
+</html>

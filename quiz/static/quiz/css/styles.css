@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(#2535ea, #0f1a9a);
+  color: #fff;
+}
+
+#quiz-card, #result-card {
+  background-color: #1626e0;
+  width: 50rem;
+  max-width: 90%;
+  margin: 6rem auto;
+  padding: 2rem;
+  height: auto;
+  -webkit-box-shadow: 2px 5px 15px #080e54;
+          box-shadow: 2px 5px 15px #080e54;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#quiz-card .question, #result-card .question {
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  text-align: center;
+  width: 85%;
+  padding: 2rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  #quiz-card .question, #result-card .question {
+    margin: 1rem 0;
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+#quiz-card .question-counter, #result-card .question-counter {
+  font-weight: small;
+  text-align: center;
+}
+
+#quiz-card .options, #result-card .options {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-auto-flow: row;
+  grid-gap: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  #quiz-card .options, #result-card .options {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+#quiz-card .options div, #result-card .options div {
+  padding: 1rem;
+  background-color: #fff;
+  color: #111;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  cursor: pointer;
+}
+
+#quiz-card .options div:hover, #result-card .options div:hover {
+  background-color: #0f1a9a;
+  color: #fff;
+}
+
+#quiz-card .options div:hover span, #result-card .options div:hover span {
+  background-color: #fff;
+  color: #0f1a9a;
+}
+
+#quiz-card .options div span, #result-card .options div span {
+  background-color: #0f1a9a;
+  color: #fff;
+  margin-right: 0.5rem;
+  font-size: small;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 2.5px;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+#quiz-card button, #result-card button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  border: 0;
+  background-color: #fff;
+  color: #0f1a9a;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  font-weight: bold;
+  margin-top: 2rem;
+  cursor: pointer;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+#quiz-card button:hover, #result-card button:hover {
+  background-color: #0f1a9a;
+  color: #fff;
+}
+
+#quiz-card form div, #result-card form div {
+  margin: 1rem 0;
+}
+
+#quiz-card input, #result-card input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 0.5rem;
+}
+
+.brand {
+  font-size: xx-large;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.categories-section {
+  width: 70%;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.categories-section > p {
+  color: #b1b6f7;
+  font-weight: bold;
+  font-size: larger;
+  margin: 0 0 3rem 0;
+  text-align: center;
+}
+
+.categories-section .categories {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 1rem;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+}
+
+.categories-section .categories label {
+  position: relative;
+}
+
+.categories-section .categories label input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.categories-section .categories .category-item {
+  text-align: center;
+}
+
+.categories-section .categories .category-item i {
+  -webkit-filter: drop-shadow(2px 5px 5px #080e54);
+          filter: drop-shadow(2px 5px 5px #080e54);
+}
+
+@media screen and (max-width: 768px) {
+  .categories-section .categories {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.categories-section form button {
+  margin: 2rem 0;
+  padding: 1rem 4rem;
+  border: 0;
+  background-color: #fff;
+  color: #0f1a9a;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-box-shadow: 2px 5px 15px #080e54;
+          box-shadow: 2px 5px 15px #080e54;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.categories-section form button:hover {
+  background-color: #0f1a9a;
+  color: #fff;
+}
+
+#result-card {
+  padding: 4rem 0;
+}
+
+#result-card heading {
+  margin-bottom: 2rem;
+}
+
+#result-card h2 {
+  margin: 1.5rem 0;
+  font-size: xxx-large;
+  color: #fff;
+}
+
+#result-card p {
+  color: #b1b6f7;
+  font-size: large;
+}
+
+td {
+  background-color: #9aa1f5;
+  padding: 0.5rem;
+}
+
+th {
+  background-color: #555554;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .user p:first-child {
+  margin-right: 1rem;
+}
+
+header nav a {
+  color: #dfe1fc;
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.php-color {
+  color: #c8ccfa;
+}
+
+.js-color {
+  color: #EFD81D;
+}
+
+.html5-color {
+  color: #eb947d;
+}
+
+.border {
+  border: 1px solid #fff;
+}
+
+.card-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-footer a {
+  margin-top: 2rem;
+  color: #9aa1f5;
+  text-decoration: none;
+}
+
+.card-footer a:hover {
+  margin-top: 2rem;
+  color: #bdc2ff;
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */
+
+.errorlist {
+  list-style: none;
+}
+
+.errorlist li {
+  font-size:small;
+  color:#fdff85;
+}
